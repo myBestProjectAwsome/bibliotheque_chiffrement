@@ -1,4 +1,6 @@
-import decrypt_letter
+from .decrypt_letter import decrypt_letter
+
+
 def decrypt(text,key):
     """dechiffre un texte complet"""
 
@@ -7,7 +9,7 @@ def decrypt(text,key):
 
     for c in text:
         if c.isalpha():
-            decrypted_char = decrypt_letter.decrypt_letter(c,key)
+            decrypted_char = decrypt_letter(c,key)
             res.append(decrypted_char)
         else:
             res.append(c)

@@ -1,4 +1,4 @@
-import encrypt_letter
+from .encrypt_letter import encrypt_letter
 def encrypt(text,key):
     """chiffre un texte complet"""
 
@@ -6,7 +6,7 @@ def encrypt(text,key):
 
     for c in text:
         if c.isalpha():
-            encrypted_char = encrypt_letter.encrypt_letter(c,key)
+            encrypted_char = encrypt_letter(c,key)
             res.append(encrypted_char)
         else:
             res.append(c)
