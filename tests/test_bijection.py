@@ -24,5 +24,4 @@ class TestBijection:
         for n in range(26):
             letter = num_to_char(n)
             res = char_to_num(letter)
-            assert res == n 
-        
+            assert res == n
