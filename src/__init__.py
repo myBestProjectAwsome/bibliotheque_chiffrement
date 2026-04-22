@@ -5,6 +5,7 @@ from .encrypt_letter import encrypt_letter
 from .decrypt_letter import decrypt_letter
 from .encrypt import encrypt
 from .decrypt import decrypt
+from .brute_force import brute_force, display_brute_force
 
 __all__ = [
     'char_to_num',
@@ -12,5 +13,7 @@ __all__ = [
     'encrypt_letter',
     'decrypt_letter',
     'encrypt',
-    'decrypt'
+    'decrypt',
+    'brute_force',
+    'display_brute_force'
 ]
