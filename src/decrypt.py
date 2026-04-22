@@ -1,4 +1,4 @@
-from .decrypt_letter import decrypt_letter
+from src import decrypt_letter
 
 
 def decrypt(text,key):
@@ -17,9 +17,3 @@ def decrypt(text,key):
     return ''.join(res)
 
 
-# jeux de tests
-
-print(decrypt("KHOOR",3))
-print(decrypt("BCD",1))
-print(decrypt("ABC",3))
-print(decrypt("GTSOTZW !",5))

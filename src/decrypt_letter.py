@@ -13,8 +13,3 @@ def decrypt_letter(letter,key):
     return num_to_char(x)
 
 
-# jeux de tests
-
-print(decrypt_letter('D',3))
-print(decrypt_letter('A',3))
-print(decrypt_letter('K',3))

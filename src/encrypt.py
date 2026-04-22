@@ -1,4 +1,4 @@
-from .encrypt_letter import encrypt_letter
+from src import encrypt_letter
 def encrypt(text,key):
     """chiffre un texte complet"""
 
@@ -13,9 +13,4 @@ def encrypt(text,key):
 
     return ''.join(res)
 
-# jeu de tests
 
-print(encrypt("HELLO",3))
-print(encrypt("ABC",1))
-print(encrypt("XYZ", 3))       
-print(encrypt("Bonjour !", 5))
