@@ -59,3 +59,29 @@ def compute_frequencies(text: str) -> dict:
         return {letter: 0.0 for letter in counts}
  
     return {letter: (count / total) * 100 for letter, count in counts.items()}
+
+def chi_squared_score(text: str) -> float:
+    """calcule le score chi-carre entre les frequences du texte
+    et les frequences attendues du francais.
+ 
+    plus le score est bas, plus le texte ressemble a du francais.
+ 
+    formule : sum((observe - attendu)^2 / attendu) pour chaque lettre
+ 
+    Args:
+        text: le texte a evaluer
+ 
+    Returns:
+        score chi-carre (plus petit = plus probable)
+    """
+ 
+    observed = compute_frequencies(text)
+    score = 0.0
+ 
+    for letter in FREQ_FRANCAIS:
+        expected = FREQ_FRANCAIS[letter]
+        if expected > 0:
+            score += (observed[letter] - expected) ** 2 / expected
+ 
+    return score
+ 
