@@ -85,3 +85,29 @@ def chi_squared_score(text: str) -> float:
  
     return score
  
+
+def frequency_attack(cipher_text: str) -> list[dict]:
+    """attaque par analyse frequentielle.
+ 
+    teste les 26 cles et classe les resultats par score chi-carre.
+    le premier resultat est la cle la plus probable.
+ 
+    Args:
+        cipher_text: le texte chiffre a attaquer
+ 
+    Returns:
+        liste de 26 dictionnaires tries par score croissant :
+        [{"key": 3, "text": "HELLO", "score": 12.5}, ...]
+    """
+ 
+    results = []
+ 
+    for key in range(26):
+        decrypted = decrypt(cipher_text, key)
+        score = chi_squared_score(decrypted)
+        results.append({"key": key, "text": decrypted, "score": score})
+ 
+    results.sort(key=lambda r: r["score"])
+ 
+    return results
+ 
