@@ -111,3 +111,16 @@ def frequency_attack(cipher_text: str) -> list[dict]:
  
     return results
  
+
+def crack(cipher_text: str) -> dict:
+    """trouve la cle la plus probable.
+ 
+    Args:
+        cipher_text: le texte chiffre
+ 
+    Returns:
+        dictionnaire {"key": int, "text": str, "score": float}
+    """
+ 
+    results = frequency_attack(cipher_text)
+    return results[0]
