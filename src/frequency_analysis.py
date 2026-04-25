@@ -40,3 +40,22 @@ def count_letters(text: str) -> dict:
             counts[c] += 1
  
     return counts
+
+ 
+def compute_frequencies(text: str) -> dict:
+    """calcule la frequence de chaque lettre en pourcentage.
+ 
+    Args:
+        text: le texte a analyser
+ 
+    Returns:
+        dictionnaire {"A": 8.5, "B": 1.2, ...}
+    """
+ 
+    counts = count_letters(text)
+    total = sum(counts.values())
+ 
+    if total == 0:
+        return {letter: 0.0 for letter in counts}
+ 
+    return {letter: (count / total) * 100 for letter, count in counts.items()}
