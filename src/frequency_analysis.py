@@ -22,3 +22,21 @@ FREQ_FRANCAIS = {
     'U': 6.05, 'V': 1.32, 'W': 0.04, 'X': 0.45,
     'Y': 0.30, 'Z': 0.12
 }
+
+def count_letters(text: str) -> dict:
+    """compte le nombre d'occurrences de chaque lettre.
+ 
+    Args:
+        text: le texte a analyser
+ 
+    Returns:
+        dictionnaire {"A": 5, "B": 0, ...}
+    """
+ 
+    counts = {chr(i + ord('A')): 0 for i in range(26)}
+ 
+    for c in text.upper():
+        if c.isalpha():
+            counts[c] += 1
+ 
+    return counts
